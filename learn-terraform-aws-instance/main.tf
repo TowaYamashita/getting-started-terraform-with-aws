@@ -10,6 +10,12 @@ terraform {
 
   # このコードが実行されるために必要なTerraformの最低バージョン
   required_version = ">= 1.2.0"
+
+  backend "s3" {
+    bucket = "terraform-remote-state-2023-11-20"
+    key    = "terraform.tfstate"
+    region = "us-west-2"
+  }
 }
 
 # プロバイダーブロック
